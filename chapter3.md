@@ -50,3 +50,47 @@ Model // 包含网络获取数据，缓存数据和对数据操作
 * Supporting Files -- 系统默认创建的，包含入口`storyboard`、`Assets`、`Info.plist`文件
 
 * Resource -- 资源文件，图片资源，文件资源，建议按照模块进行划分，有些图片具有公用属性可以单独分类
+
+## 四、文档结构
+
+1. 文档注释，一般系统会默认创建文档相关信息，也可以设置模板，在`.h`文件中系统信息之后需要添加该类的功能说明，如果有特殊使用场景和异常信息都要添加说明。
+
+2. `.h`文件需要将对外暴露的属性和方法给出对应的注释。
+
+3. `.m`文件内容结构
+
+```
+@interface Demo ()
+@property (nonatomic, strong) NSString * title;
+@end
+@implementation Demo
+
+#pragma mark - Class method
++ (void)getIdentifier { }
+
+
+#pragma mark - LifeCycle
+
+// 系统初始化方法
+//
+- (void)dealloc {
+    _title = nil;
+}
+// 系统方法
+
+#pragma mark - Action
+// 事件处理
+
+#pragma mark - delegate
+// 代理事件
+
+#pragma mark - Properties/Var
+// 属性setter/getter
+
+@end
+```
+
+* 使用`#pragma mark -`进行模块划分
+* 将`dealoc`放在初始化方法后面
+* 在`init`和`dealloc`不要使用存取方法获取变量(`.`语法)，还未初始化使用可能引发不可预见的问题，同样在销毁时候也不要再使用`self`值
+* 释放资源之后注意先后顺序

@@ -1,4 +1,4 @@
-#  第一章 编程规范
+# 第一章 编程规范
 
 ## 一、命名规范
 
@@ -6,9 +6,15 @@
 
 2. 命名必须具有意义。尽量避免缩写，Objective-C语言官方提供的标准是行为动词加名词进行组合为方法名称，变量名为表示的意义单词组合起来，添加行为动词组合后可以通顺阅读并能理解含义。
 
+3. 前缀。如果过需要添加模块或项目标识，可以添加前缀，如`SDWebImage`框架的前缀是`sd_`，用小写加下划线`_`，`IQKeyboardManager`框架的前缀为`IQ`，采用两个缩写大写字母标记。
+
+4. 不要与系统框架保留字冲突，如`CG`、`NS`、`UI`、`CA`等，这些都是被已知的系统框架，即使扩展系统框架也需要与系统的区分。
+
+5. 尽量不要使用下划线做前缀，系统私有函数都是单(`_`)或双(`__`)下划线，可能会导致不可预见的逻辑甚至严重的`bug`。
+
 ```
 // 正确示范
-@property (nonatomic, strong) NSString * dateString;
+@property (nonatomic, strong) NSString * title;
 
 // 错误示范
 @property (nonatomic, strong) NSString * Date;
@@ -41,6 +47,32 @@
 NSDictionary * dict = @{ @"k": @"v", @"k1": @"v1"};
 NSArray * list = @[ @{"k": @"v"}, @{@"k1": @"v1"}];
 ```
+
+5. 空属性修饰。目前有三种方式可以修饰是否为空，可以为空`nullable`、`__nullable`、`_Nullable`，不允许为空`nonnull`、`__nonnull`、`_Nonnull`，示例如下：
+
+```
+@property (nonatomic, strong, nullable) NSString * title;
+@property (nonatomic, strong) NSString * __nullable title;
+@property (nonatomic, strong) NSString * _Nullable title;
+```
+
+其中`nullable`/`nonull`用法不一样(如果是双指针、`block`的返回值和参数则不能使用)，`__nullable`/`__nonnull`已经被最新的`_Nullable`/`_Nonnull`替代，在一些旧的项目里还存在。三者功能都是一样的，官方提供了两个宏可以直接指定默认为`nonnull`：
+
+```
+NS_ASSUME_NONNULL_BEGIN
+
+@interface myClass ()
+
+@property (nonatomic, copy) NSString *aString;
+
+- (id)methodWithString:(nullable NSString *)str;
+
+@end
+
+NS_ASSUME_NONNULL_END
+```
+
+6. 判空处理。尽量在使用数据时候添加分类方法去判断，再调用系统方法，不建议直接使用`runtime`进行拦截处理。常见的有`NSArray`、`NSDictionary`、`NSAttributeString`进行存取操作时候都不允许为空，系统函数并未做判空处理，可以将对应的方法添加到分类做统一处理。
 
 
 ## 四、注释
