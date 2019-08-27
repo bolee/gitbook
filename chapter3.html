@@ -1,0 +1,424 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第三章 结构组织 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter4.html" />
+    
+    
+    <link rel="prev" href="chapter2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    文档说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter0.html">
+            
+                <a href="chapter0.html">
+            
+                    
+                    第零章 编程规约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 结构组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章 数据缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 第三方框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 辅助工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第三章 结构组织</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x56DB;&#x7AE0;-&#x7ED3;&#x6784;&#x7EC4;&#x7EC7;">&#x7B2C;&#x56DB;&#x7AE0; &#x7ED3;&#x6784;&#x7EC4;&#x7EC7;</h1>
+<h2 id="&#x4E00;&#x3001;mvc&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x4E00;&#x3001;MVC&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h2>
+<p><code>Apple</code>&#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;&#x7684;&#x662F;<code>MVC</code>&#xFF0C;&#x5BF9;&#x5E94;&#x7684;<code>view</code>&#x4E3A;<code>storyboard</code>&#x6587;&#x4EF6;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x7684;&#x903B;&#x8F91;&#x90FD;&#x5199;&#x5728;<code>Controller</code>&#x91CC;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x63A7;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5BFC;&#x81F4;<code>Controller</code>&#x66F4;&#x52A0;&#x81C3;&#x80BF;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x63A7;&#x4EF6;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#x51CF;&#x5C11;&#x63A7;&#x5236;&#x5668;&#x7684;&#x8D1F;&#x8F7D;&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;mvvm&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x4E8C;&#x3001;MVVM&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h2>
+<p>&#x5728;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x9010;&#x6E10;&#x589E;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;<code>MVVM</code>&#x66FF;&#x4EE3;<code>MVC</code>&#x89E3;&#x653E;<code>Controller</code>&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x662F;&#x7ED3;&#x5408;<code>ReactiveObjC</code>&#x6846;&#x67B6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#xFF0C;&#x5C06;&#x4E4B;&#x524D;&#x7684;&#x4E8B;&#x4EF6;&#x7528;&#x4FE1;&#x53F7;&#x91CF;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x66FF;&#x4EE3;&#x3002;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x4E3A;</p>
+<pre><code>ViewController  // &#x4E0E;&#x63A7;&#x5236;&#x5668;&#x76F8;&#x5173;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#xFF0C;&#x5BFC;&#x822A;&#x680F;&#x90E8;&#x5206;
+View //&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x62EC;&#x5E03;&#x5C40;
+ViewModel // view&#x548C;model&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x90E8;&#x5206;&#xFF0C;&#x56DE;&#x8C03;view&#x90E8;&#x5206;&#x5237;&#x65B0;&#x754C;&#x9762;&#xFF0C;&#x83B7;&#x53D6;view&#x4E8B;&#x4EF6;&#x62C9;&#x53D6;model&#x7684;&#x6570;&#x636E;
+Model // &#x5305;&#x542B;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x548C;&#x5BF9;&#x6570;&#x636E;&#x64CD;&#x4F5C;
+</code></pre><h2 id="&#x4E09;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x4E09;&#x3001;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<p>&#x4E0B;&#x9762;&#x7684;&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x5177;&#x6709;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x89C4;&#x6A21;&#x663E;&#x793A;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x53EA;&#x663E;&#x793A;&#x4E86;&#x4E1A;&#x52A1;&#x6A21;&#x5757;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5DE5;&#x7A0B;&#x9879;&#x76EE;&#x7ED3;&#x6784;&#xFF0C;&#x672A;&#x5305;&#x542B;<code>Pods</code>&#x3001;<code>Frameworks</code>&#x548C;<code>XXXTest</code>&#x7B49;&#x7CFB;&#x7EDF;&#x751F;&#x6210;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<ul>
+<li><p>AppDelegate -- &#x7CFB;&#x7EDF;&#x5165;&#x53E3;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x529F;&#x80FD;&#x4E0D;&#x65AD;&#x6269;&#x5C55;&#x4E5F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5206;&#x7C7B;&#xFF0C;&#x5982;&#x4E0B;&#x6DFB;&#x52A0;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x548C;&#x63A8;&#x9001;&#x90E8;&#x5206;</p>
+<ul>
+<li>AppDelegate+Debug.h</li>
+<li>AppDelegate+Debug.m</li>
+<li>AppDelegate+Push.h</li>
+<li>AppDelegate+Push.m</li>
+</ul>
+</li>
+<li><p>Main(Class) -- &#x4E3B;&#x8981;&#x4E1A;&#x52A1;&#x6A21;&#x5757;&#xFF0C;&#x5305;&#x542B;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x4E1A;&#x52A1;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF0C;&#x5EFA;&#x8BAE;&#x4EE5;&#x9996;&#x9875;&#x6A21;&#x5757;&#x5212;&#x5206;&#x4E3A;&#x57FA;&#x51C6;&#xFF0C;&#x7136;&#x540E;&#x968F;&#x7740;&#x4E1A;&#x52A1;&#x6269;&#x5C55;</p>
+<ul>
+<li>Base -- &#x57FA;&#x7840;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x542B;<code>BaseView</code>&#x3001;<code>BaseModel</code>&#x3001;<code>BaseController</code>&#x7B49;&#x57FA;&#x7C7B;&#x4FE1;&#x606F;</li>
+<li>Tabbar -- &#x5177;&#x6709;<code>UITabBar</code>&#x9879;&#x76EE;</li>
+<li>Home -- &#x9996;&#x9875;&#x4FE1;&#x606F;</li>
+<li>User -- &#x7528;&#x6237;&#x6A21;&#x5757;</li>
+</ul>
+</li>
+<li><p>Component -- &#x7EC4;&#x4EF6;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x4E0E;&#x4E1A;&#x52A1;&#x65E0;&#x5173;&#x7684;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x6A21;&#x5757;&#x5177;&#x6709;&#x66F4;&#x901A;&#x7528;&#x6027;&#x53EF;&#x4EE5;&#x8DE8;&#x9879;&#x76EE;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x63D0;&#x53D6;&#x51FA;&#x53BB;&#x5C01;&#x88C5;&#x4E3A;framework&#x6A21;&#x5F0F;</p>
+<ul>
+<li>Cache -- &#x7F13;&#x5B58;&#x6A21;&#x5757;</li>
+<li>Networking -- &#x7F51;&#x7EDC;&#x6A21;&#x5757;</li>
+<li>MapView -- &#x5730;&#x56FE;&#x6A21;&#x5757;</li>
+</ul>
+</li>
+<li><p>Category -- &#x5206;&#x7C7B;&#xFF0C;&#x5BF9;&#x539F;&#x6709;&#x7D2F;&#x7684;&#x529F;&#x80FD;&#x6269;&#x5C55;&#xFF0C;&#x5982;&#x679C;&#x529F;&#x80FD;&#x5177;&#x6709;&#x660E;&#x663E;&#x7684;&#x4E0D;&#x540C;&#x4E5F;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x591A;&#x4E2A;&#x5206;&#x7C7B;&#xFF0C;&#x4E0B;&#x9762;&#x53EA;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7C7B;&#x5728;&#x5206;&#x7EC4;&#xFF0C;&#x9632;&#x6B62;&#x76EE;&#x5F55;&#x6DF1;&#x5EA6;&#x6269;&#x5C55;</p>
+<ul>
+<li>NSString -- &#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x7684;&#x662F;&#x5BF9;&#x4E24;&#x4E2A;&#x529F;&#x80FD;&#x8FDB;&#x884C;&#x6269;&#x5C55;<ul>
+<li>NSString+init.h</li>
+<li>NSString+init.m</li>
+<li>NSString+number.h</li>
+<li>NSString+number.m</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Service -- &#x5177;&#x6709;&#x6478;&#x4E2A;&#x72EC;&#x7ACB;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8BBE;&#x8BA1;&#x6210;&#x670D;&#x52A1;&#x6A21;&#x5F0F;&#xFF0C;&#x5982;&#x7CFB;&#x7EDF;&#x7684;&#x5B9A;&#x4F4D;&#x6A21;&#x5757;&#x3001;&#x84DD;&#x7259;&#x6A21;&#x5757;&#x3001;&#x52A0;&#x5BC6;&#x6A21;&#x5757;&#x7B49;&#xFF0C;</p>
+</li>
+<li><p>Vendor -- &#x7B2C;&#x4E09;&#x65B9;&#x6846;&#x67B6;&#xFF0C;&#x867D;&#x7136;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x53EF;&#x4EE5;&#x7528;<code>Cocoapods</code>&#x548C;<code>Carthage</code>&#x7BA1;&#x7406;&#xFF0C;&#x90E8;&#x5206;&#x5382;&#x5BB6;<code>SDK</code>&#x5E76;&#x672A;&#x53D1;&#x5E03;&#x5230;&#x7BA1;&#x7406;&#x5E73;&#x53F0;</p>
+</li>
+<li><p>Supporting Files -- &#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x5305;&#x542B;&#x5165;&#x53E3;<code>storyboard</code>&#x3001;<code>Assets</code>&#x3001;<code>Info.plist</code>&#x6587;&#x4EF6;</p>
+</li>
+<li><p>Resource -- &#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#xFF0C;&#x6587;&#x4EF6;&#x8D44;&#x6E90;&#xFF0C;&#x5EFA;&#x8BAE;&#x6309;&#x7167;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;&#x6709;&#x4E9B;&#x56FE;&#x7247;&#x5177;&#x6709;&#x516C;&#x7528;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x5206;&#x7C7B;</p>
+</li>
+</ul>
+<h2 id="&#x56DB;&#x3001;&#x6587;&#x6863;&#x7ED3;&#x6784;">&#x56DB;&#x3001;&#x6587;&#x6863;&#x7ED3;&#x6784;</h2>
+<ol>
+<li><p>&#x6587;&#x6863;&#x6CE8;&#x91CA;&#xFF0C;&#x4E00;&#x822C;&#x7CFB;&#x7EDF;&#x4F1A;&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x6587;&#x6863;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6A21;&#x677F;&#xFF0C;&#x5728;<code>.h</code>&#x6587;&#x4EF6;&#x4E2D;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x8BE5;&#x7C7B;&#x7684;&#x529F;&#x80FD;&#x8BF4;&#x660E;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7279;&#x6B8A;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x548C;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x90FD;&#x8981;&#x6DFB;&#x52A0;&#x8BF4;&#x660E;&#x3002;</p>
+</li>
+<li><p><code>.h</code>&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5C06;&#x5BF9;&#x5916;&#x66B4;&#x9732;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x7ED9;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x6CE8;&#x91CA;&#x3002;</p>
+</li>
+<li><p><code>.m</code>&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7ED3;&#x6784;</p>
+</li>
+</ol>
+<pre><code>@interface Demo ()
+@property (nonatomic, strong) NSString * title;
+@end
+@implementation Demo
+
+#pragma mark - Class method
++ (void)getIdentifier { }
+
+
+#pragma mark - LifeCycle
+
+// &#x7CFB;&#x7EDF;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;
+//
+- (void)dealloc {
+    _title = nil;
+}
+// &#x7CFB;&#x7EDF;&#x65B9;&#x6CD5;
+
+#pragma mark - Action
+// &#x4E8B;&#x4EF6;&#x5904;&#x7406;
+
+#pragma mark - Public
+// &#x5BF9;&#x5916;&#x65B9;&#x6CD5;
+
+#pragma mark - Private
+// &#x79C1;&#x6709;&#x65B9;&#x6CD5;
+
+#pragma mark - delegate
+// &#x4EE3;&#x7406;&#x4E8B;&#x4EF6;
+
+#pragma mark - Properties/Var
+// &#x5C5E;&#x6027;setter/getter
+
+@end
+</code></pre><ul>
+<li>&#x4F7F;&#x7528;<code>#pragma mark -</code>&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x5212;&#x5206;</li>
+<li>&#x5C06;<code>dealoc</code>&#x653E;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#x540E;&#x9762;</li>
+<li>&#x5728;<code>init</code>&#x548C;<code>dealloc</code>&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x5B58;&#x53D6;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x53D8;&#x91CF;(<code>.</code>&#x8BED;&#x6CD5;)&#xFF0C;&#x8FD8;&#x672A;&#x521D;&#x59CB;&#x5316;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x5F15;&#x53D1;&#x4E0D;&#x53EF;&#x9884;&#x89C1;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x6837;&#x5728;&#x9500;&#x6BC1;&#x65F6;&#x5019;&#x4E5F;&#x4E0D;&#x8981;&#x518D;&#x4F7F;&#x7528;<code>self</code>&#x503C;</li>
+<li>&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x4E4B;&#x540E;&#x6CE8;&#x610F;&#x5148;&#x540E;&#x987A;&#x5E8F;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter2.html" class="navigation navigation-prev " aria-label="Previous page: 第二章 日志处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter4.html" class="navigation navigation-next " aria-label="Next page: 第四章 数据缓存">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第三章 结构组织","level":"1.5","depth":1,"next":{"title":"第四章 数据缓存","level":"1.6","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"previous":{"title":"第二章 日志处理","level":"1.4","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3.md","mtime":"2019-08-27T12:36:53.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-27T13:07:27.124Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
