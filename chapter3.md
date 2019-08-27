@@ -81,6 +81,12 @@ Model // 包含网络获取数据，缓存数据和对数据操作
 #pragma mark - Action
 // 事件处理
 
+#pragma mark - Public
+// 对外方法
+
+#pragma mark - Private
+// 私有方法
+
 #pragma mark - delegate
 // 代理事件
 

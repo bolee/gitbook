@@ -12,7 +12,10 @@
 
 5. 尽量不要使用下划线做前缀，系统私有函数都是单(`_`)或双(`__`)下划线，可能会导致不可预见的逻辑甚至严重的`bug`。
 
+6. 分类命名遵循变量命名规则，建议添加前缀以作区分。
+
 ```
+
 // 正确示范
 @property (nonatomic, strong) NSString * title;
 
@@ -74,6 +77,38 @@ NS_ASSUME_NONNULL_END
 
 6. 判空处理。尽量在使用数据时候添加分类方法去判断，再调用系统方法，不建议直接使用`runtime`进行拦截处理。常见的有`NSArray`、`NSDictionary`、`NSAttributeString`进行存取操作时候都不允许为空，系统函数并未做判空处理，可以将对应的方法添加到分类做统一处理。
 
+7. 常量命名。数字类型的使用枚举类型`NS_ENUM`和`NS_OPTIONS`，不要使用`1.2.3`去比较判断。其中`NS_OPTIONS`使用的是`bitmask`，使用`&`和`|`进行判断，示例：
+
+```
+typedef NS_OPTIONS(NSUInteger, SDWebImageDownloaderOptions) {
+    SDWebImageDownloaderLowPriority = 1 << 0,
+    SDWebImageDownloaderProgressiveLoad = 1 << 1,
+    SDWebImageDownloaderUseNSURLCache = 1 << 2,
+}
+// how to use
+SDWebImageDownloaderOptions option;
+if (option & SDWebImageDownloaderUseNSURLCache) {
+    // other 
+}
+```
+
+8. `KVO`和`NSNotification`必须主动清除。注入添加了对象观察或监听，必须手动清除，否则观察者销毁后，发送者会调用已销毁对象导致崩溃。
+
+9. `BOOL`类型判断，不要直接使用`YES == isGet`进行判断，`BOOL`定义的是`signed char`类型，`YES`、`NO`定义的是1和0，如下示例：
+
+```
+    int temp = 2;
+    if (temp == YES) {
+        NSLog(@"2 is YES");
+    } else {
+        NSLog(@"2 is NO");
+    }
+```
+
+输出结果为`2 is NO`，很显然不是我们想要的结果。
+
+10. `CoreFoundation`和`CoreGraphics`框架的内存需要手动处理，对应的申请和释放接口都有提供，与`C`相关的部分内存不归`Objective-C`管理，所以`ARC`无效，并且与`Objective-C`赋值时候需要桥接(`bridge`)模式。
+
 
 ## 四、注释
 
@@ -83,3 +118,13 @@ NS_ASSUME_NONNULL_END
 
 3. 方法注释，简短说明作用，特殊场景或异常信息需要给出说明
 
+4. 常见注释参数，一些工具可以自动生成对应的文档，可以查看官方[文档](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/HeaderDoc/intro/intro.html)更详细说明，虽然较长时间没有更新，依然具有一定的参考意义。
+
+* @brief：简短解释说明
+* @discussion：详细的描述
+* @param：参数说明
+* @return：返回值说明
+* @see：查看参考的字段或方法说明
+* @sa：与see一样
+* @code：嵌入示例代码
+* @remark：附加的一些特殊说明
